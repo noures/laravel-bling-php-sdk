@@ -46,7 +46,7 @@ class Product extends Base
     /**
      * @return int
      */
-    public function getPage(): int
+    public function getPage(): string
     {
         return ($this->page ? '/' : '') . ltrim($this->page, '/');
     }
