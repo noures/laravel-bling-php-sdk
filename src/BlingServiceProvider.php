@@ -41,9 +41,9 @@ class BlingServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('bling', function ($app) {
-            $config = $app['config']->get('bling');
-            return Client::getInstance(Config::configure($config));
+        $this->app->singleton('Bling', function () {
+            $client = Client::getInstance(Config::configure(config('bling')));
+            return new BlingApi($client);
         });
 
         $this->app->alias('bling', 'Bling');
