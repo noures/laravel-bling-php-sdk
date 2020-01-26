@@ -2,16 +2,17 @@
 
 namespace Bling;
 
+use Bling\Core\Client;
 use Bling\Services\Category;
 use Bling\Services\Order;
 use Bling\Services\Product;
 use Bling\Services\Warehouse;
 
-class BlingApi
+class BlingApi implements BlingApiInterface
 {
     private $client;
 
-    public function __construct($client)
+    public function __construct(Client $client)
     {
         $this->client = $client;
     }
