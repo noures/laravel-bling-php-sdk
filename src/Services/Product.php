@@ -32,7 +32,7 @@ class Product extends Base
      */
     public function getProvider(): string
     {
-        return ($this->page ? '/' : '') . ltrim('page=' . $this->page, '/');
+        return ($this->page ? '/' : '') . ltrim("page={$this->page}", '/');
     }
 
     /**
